@@ -6,6 +6,8 @@
 :root {
 
     --background-color-menu-header: #4c43cf;
+    --background-color-anime-finalizado: rgb(161 18 18 / 88%);
+    --background-color-anime-activo:rgb(19 163 3 / 88%);
     --color-title-menu-header: #e9e9e9;
 }
 
@@ -67,9 +69,9 @@ body {
         
 
         .container_animes_list {
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             display: grid;
-            gap: 20px;
+            gap:15px 5px;
 
             .container_anime {
                 display: flex;
@@ -89,18 +91,49 @@ body {
 
                         .figcaption_img_anime_finalizado{
                             color:white;
-                            background-color: rgb(203 36 36 / 86%);
-                            padding:10px 20px;
+                            background-color: var(--background-color-anime-finalizado);
                             position: absolute;
-                            top:0;
+                            top:86%;
+                            width: 100%;
+                            height: 52px;
+                            
+                            .header_img_anime{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .span_img_anime{
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    color: white;
+                                }
+                            }
                         }
 
                         .figcaption_img_anime_activo{
                             color:white;
-                            background-color: rgba(20, 153, 5, 0.87);
-                            padding:10px 20px;
+                            background-color: var(--background-color-anime-activo);
                             position: absolute;
-                            top:0;
+                            top:86%;
+                            width: 100%;
+                            height: 52px;
+
+                            .header_img_anime{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .span_img_anime{
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    color: white;
+                                }
+                            }
+
                         }
 
                         .img_anime {

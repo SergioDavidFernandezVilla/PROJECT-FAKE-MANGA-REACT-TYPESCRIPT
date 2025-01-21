@@ -8,6 +8,7 @@ import { MangaComponent } from "./../components/manga/MangaComponent";
 import { MangaType } from "./../types/MangaType";
 import { DataManga } from "./../utils/json/ListManga";
 import { NewMangaComponent } from "../components/newManga/NewMangaComponent";
+import { HeaderComponent } from "../components/HeaderComponent/HeaderComponent";
 
 export const HomePage = () => {
   const [dataManga, setDataManga] = useState<MangaType[]>(DataManga);
@@ -26,27 +27,7 @@ export const HomePage = () => {
 
           </div>
 
-        <header className="header">
-          <div className="container_title">
-            <h2 className="title">FakeManga</h2>
-          </div>
-
-          <nav className="nav">
-            <ul className="ul">
-              <li className="li">
-                <a href="#" className="link">
-                  Inicio
-                </a>
-              </li>
-
-              <li className="li">
-                <a href="#" className="link">
-                  Mangas
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <HeaderComponent/>
 
         <main className={`main`}>
             

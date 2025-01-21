@@ -29,3 +29,6 @@ export interface MangaComponentProps {
     manga: MangaType[]; // Nota: Usar "manga" (minúscula) para la prop por convención
 }
 
+export interface MangaCardProps {
+    manga: MangaType; // Un manga individual
+  }
