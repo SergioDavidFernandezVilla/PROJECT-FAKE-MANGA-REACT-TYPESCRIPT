@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    --background-color-menu-header: #4c43cf;
+    --color-title-menu-header: #e9e9e9;
+}
+
+body {
+    font-family: sans-serif;
+    position: relative;
+}
+
+.header {
+    height: 62px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    padding: 0px 20px 0px 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color-menu-header);
+
+    .container_title {
+        width: fit-content;
+
+        .title {
+            color: var(--color-title-menu-header);
+            width: fit-content;
+        }
+    }
+
+    .nav {
+        width: fit-content;
+
+        .ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+
+            .li {
+                a {
+                    text-decoration: none;
+                    color: var(--color-title-menu-header);
+
+                    &:hover {
+                        color: white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    padding: 20px;
+    
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .container_new_anime{
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            align-items: center;
+            gap: 20px;
+
+            .text_new_anime_h3{
+                color: var(--background-color-menu-header);
+            }
+        
+
+            .container_btn_new_anime{
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap:12px;
+
+                .btn_all_new{
+                    padding: 10px 24px;
+                    border:none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    background-color: var(--background-color-menu-header);
+                    color:var(--color-title-menu-header);
+                    transition: 0.3s ease-in-out;
+
+                }
+
+                .btn_new_anime{
+                    padding: 10px 24px;
+                    border:none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    background-color: var(--background-color-menu-header);
+                    color:var(--color-title-menu-header);
+                    transition: 0.3s ease-in-out;
+                    
+                    &:hover{
+                        background-color: white;
+                        color: var(--background-color-menu-header);
+                    }
+                }
+            }
+
+           
+        }
+
+        .container_animes_list {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            display: grid;
+            gap: 20px;
+
+            .container_anime {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                width: 240px;
+
+                .article_anime {
+                    width: 100%;
+
+                    .figure_img_anime {
+                        width: 100%;
+                        height: 300px;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        position: relative;
+
+                        .figcaption_img_anime_finalizado{
+                            color:white;
+                            background-color: rgb(203 36 36 / 86%);
+                            padding:10px 20px;
+                            position: absolute;
+                            top:0;
+                        }
+
+                        .figcaption_img_anime_activo{
+                            color:white;
+                            background-color: rgba(20, 153, 5, 0.87);
+                            padding:10px 20px;
+                            position: absolute;
+                            top:0;
+                        }
+
+                        .img_anime {
+                            width: 100%;
+                            border-radius: 4px;
+                            object-fit: contain;
+
+                        }
+                    }
+
+                    .container_text_anime_header {
+                        padding: 10px;
+                        width: 100%;
+
+                        .title_anime{
+                            font-size: 20px;
+                            line-height: 28px;
+                        }
+
+                        .estado_anime_activo {
+                            background-color: green;
+                            color:rgb(244, 244, 244);
+                            padding:6px 12px;
+                            border-radius: 5px;
+                            width: fit-content;
+
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .estado_anime_finalizado {
+                            background-color: red;
+                            color:rgb(244, 244, 244);
+                            padding:6px 12px;
+                            border-radius: 5px;
+                            width: fit-content;
+
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+
+	
+                    }
+
+                    .container_text_anime_div{
+                        padding-top: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 5px;
+
+                        .btn_text_anime_p{
+                            border:none;
+                            border-radius: 40px;
+                            width: 160px;
+                            height: 30px;
+                            background-color: var(--background-color-menu-header);
+                            color:var(--color-title-menu-header);
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.container_relative {
+    position: relative;
+
+    .modal_open {
+        /* MODO MODAL OSCURO BODY*/
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+      z-index: 999; /* Asegurarse de que esté encima de todo el contenido */
+      display: none; /* Por defecto, la superposición no se muestra */
+    }
+}
+
