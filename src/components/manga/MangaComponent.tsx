@@ -1,4 +1,8 @@
+//TYPES
 import { MangaComponentProps } from "../../types/MangaType";
+
+//CSS
+import "./MangaComponent.css"
 
 export const MangaComponent: React.FC<MangaComponentProps> = ({ manga }) => {
   return (
