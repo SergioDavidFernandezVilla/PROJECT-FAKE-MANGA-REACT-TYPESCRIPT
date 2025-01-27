@@ -12,7 +12,7 @@ const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
 
-      <Route path="/manga/:id" element={<MangaPage />} />
+      <Route path="library/manga/:id" element={<MangaPage />} />
       {/* <Route path="/manga/:id/chapter/:chapterId" element={<ChapterPage />} /> */}
     </Routes>
   );

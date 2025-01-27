@@ -18,7 +18,7 @@ export const MangaComponent: React.FC<MangaComponentProps> = ({ manga }) => {
   return (
     <>
       {manga.map((data) => (
-        <LinkToManga to={`/manga/${data.id}`} key={data.id} className="link_to_manga">
+        <LinkToManga to={`library/manga/${data.id}`} key={data.id} className="link_to_manga">
           <CardMangaComponent manga={data} />
         </LinkToManga>
       ))}

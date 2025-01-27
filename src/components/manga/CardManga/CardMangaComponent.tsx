@@ -12,9 +12,8 @@ interface MangaComponentProps {
 }
 
 // CSS COMPONENTS
-
 const ArticleMangaCss = styled.article`
-  width: 100%;
+  width: fit-content;
 `;
 
 const FigureMangaCss = styled.figure`
@@ -38,7 +37,6 @@ const FigCaptionMangaCss = styled.figcaption.withConfig({
       : "rgba(255, 0, 0, 0.8)"};
   width: 100%;
   height: 52px;
- 
 `;
 
 const HeaderMangaCss = styled.header`
@@ -115,9 +113,11 @@ export const CardMangaComponent: React.FC<MangaComponentProps> = ({
 
 
         <TextHeaderCss>
-          <h4>{manga.title}</h4>
+          
           {isHomePage && (
             <div className="container_text_anime_div">
+              <h4>{manga.title}</h4>
+
               {ultimoCapitulo && (
                 <button>
                   <span>Ultimo capitulo {ultimoCapitulo.chapterNumber}</span>

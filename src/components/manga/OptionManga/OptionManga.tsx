@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
-interface OptionsProps {
-  handleNewManga: () => void;
-}
+interface OptionsProps {}
 
 const OptionsAnimesList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  height:40px;
+  height: 40px;
   justify-content: space-between;
   align-items: center;
 `;
@@ -17,7 +15,7 @@ const GroupButtonsOptionsAnimes = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  height:100%;
+  height: 100%;
   justify-content: center;
 `;
 
@@ -37,21 +35,19 @@ const TitleOptionAnime = styled.h3`
   color: var(--color-text-primary);
 `;
 
-export const OptionManga: React.FC<OptionsProps> = ({
-  handleNewManga,
-}) => {
+export const OptionManga: React.FC<OptionsProps> = () => {
   return (
     <OptionsAnimesList>
-     
-        <TitleOptionAnime className="text_new_anime_h3">Lista de mangas: </TitleOptionAnime>
+      <TitleOptionAnime className="text_new_anime_h3">
+        Lista de mangas:{" "}
+      </TitleOptionAnime>
 
-        <GroupButtonsOptionsAnimes className="container_btn_new_anime">
-          <ButtonOptionAnime className="btn_all_new">Ver todos</ButtonOptionAnime>
-          <ButtonOptionAnime className="btn_new_anime" onClick={handleNewManga}>
-            New manga
-          </ButtonOptionAnime>
-        </GroupButtonsOptionsAnimes>
-      
+      <GroupButtonsOptionsAnimes className="container_btn_new_anime">
+        <ButtonOptionAnime className="btn_all_new">Ver todos</ButtonOptionAnime>
+        <ButtonOptionAnime className="btn_new_anime">
+          New manga
+        </ButtonOptionAnime>
+      </GroupButtonsOptionsAnimes>
     </OptionsAnimesList>
   );
 };
