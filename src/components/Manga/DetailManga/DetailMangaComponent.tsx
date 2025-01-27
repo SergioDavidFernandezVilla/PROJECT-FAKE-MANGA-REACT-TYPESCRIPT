@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 // TYPES
-import { MangaCardProps } from "../../types/MangaType";
+import { MangaCardProps } from "../../../types/MangaType";
 
 // COMPONENTS
 import { ListGenreAnime } from "./ListGenreAnime/ListGenreAnimeComponent";

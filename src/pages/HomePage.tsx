@@ -14,7 +14,7 @@ import { MangaType } from "./../types/MangaType";
 import { OptionManga } from "../components/Manga/OptionManga/OptionManga";
 
 // STYLE COMPONENTS
-import {Container} from "../componentStyles/containerStyle"
+import {Container} from "../componentStyles/Container/containerStyle"
 
 // CSS COMPONENTS
 
@@ -24,7 +24,7 @@ const ContainerAnimes = styled.div`
   gap: 15px 5px;
 `;
 
-export const HomePage = () => {
+const HomePage = () => {
   const [dataManga, setDataManga] = useState<MangaType[]>(DataManga);
 
   return (
@@ -45,3 +45,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

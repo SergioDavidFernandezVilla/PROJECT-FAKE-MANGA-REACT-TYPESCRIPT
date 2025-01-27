@@ -1,11 +1,10 @@
-
-//DEPENDES
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { useState } from "react";
 
-
-//TYPES
+// TYPES
 import { MangaType } from "../../../types/MangaType";
+import { BackgroundTagActivo, BackgroundTagFinalizado } from "../../../const/BackgroundColor";
 
 interface MangaComponentProps {
   manga: MangaType;
@@ -19,7 +18,8 @@ const ArticleMangaCss = styled.article`
 const FigureMangaCss = styled.figure`
   overflow: hidden;
   border-radius: 10px;
-  display:inline-grid;
+  display: inline-grid;
+  position: relative;
 
   img {
     width: 100%;
@@ -27,14 +27,16 @@ const FigureMangaCss = styled.figure`
   }
 `;
 
+
+
 const FigCaptionMangaCss = styled.figcaption.withConfig({
-  shouldForwardProp: (prop) => prop !== 'estado'  // Filtra el prop 'estado'
+  shouldForwardProp: (prop) => prop !== 'estado',
 })<{ estado: string }>`
   color: white;
   background: ${(props) =>
     props.estado === "activo"
-      ? "rgba(0, 128, 0, 0.8)"
-      : "rgba(255, 0, 0, 0.8)"};
+      ? BackgroundTagActivo
+      : BackgroundTagFinalizado};
   width: 100%;
   height: 52px;
 `;
@@ -86,46 +88,50 @@ const TextHeaderCss = styled.header`
   }
 `;
 
-export const CardMangaComponent: React.FC<MangaComponentProps> = ({
-  manga,
-}) => {
+export const CardMangaComponent: React.FC<MangaComponentProps> = ({ manga }) => {
   const location = useLocation();
-
-  // Verifica si estás en la ruta "/"
   const isHomePage = location.pathname === "/";
-
-  // CONSEGUIR EL ULTIMO CAPITULO
   const ultimoCapitulo = manga.chapters[manga.chapters.length - 1];
 
+  // Estado para controlar la carga de la imagen
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Función para manejar cuando la imagen se haya cargado
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
-      <ArticleMangaCss>
-        <FigureMangaCss>
-          <img src={manga.imgUrl} alt={manga.imgAlt} />
-          
+    <ArticleMangaCss>
+      <FigureMangaCss>
 
-          <FigCaptionMangaCss estado={manga.Estado}>
-            <HeaderMangaCss>
-              <span>{manga.Estado}</span>
-            </HeaderMangaCss>
-          </FigCaptionMangaCss>
-        </FigureMangaCss>
         
+        <img
+          src={manga.imgUrl}
+          alt={manga.imgAlt}
+          onLoad={handleImageLoad} // Llamar a handleImageLoad cuando la imagen se carga
+        />
 
+        <FigCaptionMangaCss estado={manga.Estado}>
+          <HeaderMangaCss>
+            <span>{manga.Estado}</span>
+          </HeaderMangaCss>
+        </FigCaptionMangaCss>
+      </FigureMangaCss>
 
-        <TextHeaderCss>
-          
-          {isHomePage && (
-            <div className="container_text_anime_div">
-              <h4>{manga.title}</h4>
+      <TextHeaderCss>
+        {isHomePage && (
+          <div className="container_text_anime_div">
+            <h4>{manga.title}</h4>
 
-              {ultimoCapitulo && (
-                <button>
-                  <span>Ultimo capitulo {ultimoCapitulo.chapterNumber}</span>
-                </button>
-              )}
-            </div>
-          )}
-        </TextHeaderCss>
-      </ArticleMangaCss>
+            {ultimoCapitulo && (
+              <button>
+                <span>Último capítulo {ultimoCapitulo.chapterNumber}</span>
+              </button>
+            )}
+          </div>
+        )}
+      </TextHeaderCss>
+    </ArticleMangaCss>
   );
 };

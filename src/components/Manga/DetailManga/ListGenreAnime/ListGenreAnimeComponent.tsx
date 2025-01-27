@@ -3,13 +3,13 @@
 import styled from "styled-components";
 
 // COLORS TEXT
-import { TextTagPrimary, TextTagSecundary } from "../../../const/ColorText";
+import { TextTagPrimary, TextTagSecundary } from "../../../../const/ColorText";
 
 // BACKGROUNDS COLORS
-import { BackgroundTagAccion, BackgroundTagAdventura, BackgroundTagDrama } from "../../../const/BackgroundColor";
+import { BackgroundTagAccion, BackgroundTagAdventura, BackgroundTagDrama } from "../../../../const/BackgroundColor";
 
 // TYPES
-import { MangaCardProps } from "../../../types/MangaType";
+import { MangaCardProps } from "../../../../types/MangaType";
 
 const ListGenreContainer = styled.div`
   display: flex;

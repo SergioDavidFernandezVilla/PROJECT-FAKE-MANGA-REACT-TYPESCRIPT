@@ -14,8 +14,9 @@ import { HeaderComponent } from "../components/HeaderComponent/HeaderComponent";
 import { CardMangaComponent } from "../components/Manga/CardManga/CardMangaComponent";
 
 //STYLE COMPONENT
-import { Container } from "../componentStyles/containerStyle";
-import { DetailMangaComponent } from "../components/DetailManga/DetailMangaComponent";
+import { Container } from "../componentStyles/Container/containerStyle";
+import { DetailMangaComponent } from "../components/Manga/DetailManga/DetailMangaComponent";
+import { NotFoundManga } from "./Manga/NotFoundManga/NotFoundManga";
 
 const MangaDetailContainer = styled.div`
   display: grid;
@@ -23,14 +24,15 @@ const MangaDetailContainer = styled.div`
   gap: 10px;
 `;
 
-export const MangaPage = () => {
+export default function MangaPage(){
   const [dataManga, setDataManga] = useState<MangaType[]>(DataManga);
+
 
   const { id } = useParams(); // Obtiene el ID del manga desde la URL
   const manga = dataManga.find((manga) => manga.id === Number(id)); // Encuentra el manga correspondiente al ID
 
   if (!manga) {
-    return <div>Manga no encontrado</div>; // Si no se encuentra el manga
+    return <NotFoundManga/> // Si no se encuentra el manga
   }
 
   return (
