@@ -69,7 +69,7 @@ export const DataManga: MangaType[] = [
     id: 2,
     title: "One Punch Man",
     description:
-      "La historia sigue a Saitama, un héroe que puede derrotar a cualquier enemigo de un solo golpe, pero lucha contra el aburrimiento y la falta de desafíos.",
+      "One Punch Man sigue la historia de Saitama, un hombre que, después de años de arduo entrenamiento, ha alcanzado un nivel de poder tan extremo que puede derrotar a cualquier enemigo de un solo golpe. Debido a su inmenso poder, Saitama se siente aburrido y busca desafíos más grandes, pero se enfrenta a la frustración de ser constantemente subestimado por los demás héroes y la sociedad en general. A pesar de su apariencia común y su falta de interés por la fama, Saitama sigue luchando para proteger a la humanidad y dar lo mejor de sí, aunque sus hazañas no siempre reciben el reconocimiento que merece.El manga combina acción épica con comedia absurda, mostrando el contraste entre la fuerza desmesurada de Saitama y los extravagantes y poderosos villanos con los que se enfrenta. La obra explora temas como la soledad, la búsqueda de propósito y la lucha contra la monotonía, todo con un toque de humor irónico que desafía los tropos tradicionales de los superhéroes.",
     imgUrl: PortadaOnePunch,
     imgAlt: "Portada del manga One Punch Man",
     Estado: "activo",

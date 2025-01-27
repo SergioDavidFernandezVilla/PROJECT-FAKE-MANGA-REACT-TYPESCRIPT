@@ -32,3 +32,4 @@ export interface MangaComponentProps {
 export interface MangaCardProps {
     manga: MangaType; // Un manga individual
   }
+

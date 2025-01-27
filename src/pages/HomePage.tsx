@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 //COMPONENTS
-import { MangaComponent } from "../components/manga/MangaComponent/MangaComponent";
+import { MangaComponent } from "../components/Manga/MangaComponent/MangaComponent";
 import { HeaderComponent } from "../components/HeaderComponent/HeaderComponent";
 
 //JSON
@@ -11,7 +11,7 @@ import { DataManga } from "./../utils/json/ListManga";
 
 //TYPES
 import { MangaType } from "./../types/MangaType";
-import { OptionManga } from "../components/manga/OptionManga/OptionManga";
+import { OptionManga } from "../components/Manga/OptionManga/OptionManga";
 
 // STYLE COMPONENTS
 import {Container} from "../componentStyles/containerStyle"
