@@ -11,7 +11,15 @@ import { MangaType } from "../types/MangaType";
 //COMPONENTS
 import { HeaderComponent } from "../components/HeaderComponent/HeaderComponent";
 import { CardMangaComponent } from "../components/manga/CardManga/CardMangaComponent";
+import styled from "styled-components";
 
+//CSS COMPONENT
+const ContainerHome = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding:20px;
+`;
 
 export const MangaPage = () => {
   const [dataManga, setDataManga] = useState<MangaType[]>(DataManga);
@@ -27,12 +35,12 @@ export const MangaPage = () => {
     <>
     <HeaderComponent/>
    
-    <main className={`main`}>
+    <ContainerHome>
       {/* Mostrar solo el manga que coincide con el ID */}
-      <div className="container_animes_list">
+      
         <CardMangaComponent manga={manga} />
-      </div>
-    </main>
+    
+    </ContainerHome>
     </>
   );
 };

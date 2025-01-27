@@ -1,25 +1,26 @@
 //TYPES
 import { Link } from "react-router-dom";
-import { MangaComponentProps } from "../../types/MangaType";
+import { MangaComponentProps } from "../../../types/MangaType";
 
 //COMPONENTS
-import { CardMangaComponent } from "./CardManga/CardMangaComponent";
+import { CardMangaComponent } from "../CardManga/CardMangaComponent";
 
 // DEPENDES
 import styled from "styled-components";
 
 //CSS COMPONENTS
-const LinkToMangaCss = styled(Link)`
+const LinkToManga = styled(Link)`
 text-decoration: none;
+width:fit-content;
 `
 
 export const MangaComponent: React.FC<MangaComponentProps> = ({ manga }) => {
   return (
     <>
       {manga.map((data) => (
-        <LinkToMangaCss to={`/manga/${data.id}`} key={data.id} className="link_to_manga">
+        <LinkToManga to={`/manga/${data.id}`} key={data.id} className="link_to_manga">
           <CardMangaComponent manga={data} />
-        </LinkToMangaCss>
+        </LinkToManga>
       ))}
     </>
   );

@@ -1,8 +1,7 @@
 //TYPES
 import { FormNewMangaType } from "../../../types/FormNewManga/FormNewMangaType";
 
-//CSS
-import "./FormNewManga.css";
+
 
 export const FormNewMangaComponent: React.FC<FormNewMangaType> = ({
   setModel,

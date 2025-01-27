@@ -12,41 +12,33 @@ interface MangaComponentProps {
 }
 
 // CSS COMPONENTS
-// Componentes estilizados
-const CardMangaCss = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  width: 250px;
-`;
 
-const ArticleMangaCss = styled.div`
+const ArticleMangaCss = styled.article`
   width: 100%;
 `;
 
 const FigureMangaCss = styled.figure`
   overflow: hidden;
   border-radius: 10px;
-  position: relative;
+  display:inline-grid;
 
   img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
   }
 `;
 
-const FigCaptionMangaCss = styled.figcaption<{ estado: string }>`
+const FigCaptionMangaCss = styled.figcaption.withConfig({
+  shouldForwardProp: (prop) => prop !== 'estado'  // Filtra el prop 'estado'
+})<{ estado: string }>`
   color: white;
   background: ${(props) =>
     props.estado === "activo"
       ? "rgba(0, 128, 0, 0.8)"
       : "rgba(255, 0, 0, 0.8)"};
-  position: absolute;
-  top: 86%;
   width: 100%;
   height: 52px;
+ 
 `;
 
 const HeaderMangaCss = styled.header`
@@ -108,16 +100,19 @@ export const CardMangaComponent: React.FC<MangaComponentProps> = ({
   const ultimoCapitulo = manga.chapters[manga.chapters.length - 1];
 
   return (
-    <CardMangaCss>
       <ArticleMangaCss>
         <FigureMangaCss>
           <img src={manga.imgUrl} alt={manga.imgAlt} />
+          
+
           <FigCaptionMangaCss estado={manga.Estado}>
             <HeaderMangaCss>
               <span>{manga.Estado}</span>
             </HeaderMangaCss>
           </FigCaptionMangaCss>
         </FigureMangaCss>
+        
+
 
         <TextHeaderCss>
           <h4>{manga.title}</h4>
@@ -132,6 +127,5 @@ export const CardMangaComponent: React.FC<MangaComponentProps> = ({
           )}
         </TextHeaderCss>
       </ArticleMangaCss>
-    </CardMangaCss>
   );
 };

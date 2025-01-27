@@ -1,7 +1,9 @@
-//CSS
-import "./App.css";
 
+// DEPENDES
 import { Routes, Route } from "react-router-dom";
+import {Suspense, lazy} from "react"
+
+// PAGES COMPONENTS
 import { HomePage } from "./pages/HomePage";
 import { MangaPage } from "./pages/MangaPage";
 
